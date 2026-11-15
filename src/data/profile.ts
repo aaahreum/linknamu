@@ -8,7 +8,7 @@ export type LinkItem = {
 export type Profile = {
   name: string;
   bio: string;
-  /** public/ 폴더 기준 경로 */
+  /** public/ 폴더 기준 경로 또는 이미지 URL */
   avatar: string;
   links: LinkItem[];
 };
@@ -17,10 +17,10 @@ export type Profile = {
 export const profile: Profile = {
   name: "이아름",
   bio: "매일 조금씩 만들고 기록하는 개발자 🌱",
-  avatar: "/avatar.svg", // 더미 사진 (public/avatar.svg)
+  avatar: "/profile.jpg", // 프로필 사진 (public/profile.jpg)
   links: [
-    { id: "github", title: "GitHub", url: "https://github.com/your-username" },
-    { id: "linkedin", title: "LinkedIn", url: "https://www.linkedin.com/in/your-username" },
-    { id: "blog", title: "Blog", url: "https://your-blog.example.com" },
+    { id: "github", title: "🐙 깃허브", url: "https://github.com/aaahreum" },
+    { id: "blog", title: "✍️ 블로그", url: "https://muerha.tistory.com" },
+    { id: "email", title: "✉️ 이메일", url: "mailto:ahreum_1122@naver.com" },
   ],
 };

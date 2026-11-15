@@ -12,13 +12,13 @@ export default function ProfileHeader({ name, bio, avatar }: Props) {
       <Image
         src={avatar}
         alt={`${name} 프로필 사진`}
-        width={160}
-        height={160}
+        width={256}
+        height={256}
         priority
-        className="size-40 rounded-full border-2 border-zinc-800 object-cover dark:border-zinc-300"
+        className="size-32 rounded-full object-cover shadow-[var(--avatar-shadow)]"
       />
-      <h1 className="mt-6 text-lg font-semibold">{name}</h1>
-      <p className="mt-1 text-sm italic text-zinc-600 dark:text-zinc-400">{bio}</p>
+      <h1 className="mt-6 text-xl font-semibold tracking-tight">{name}</h1>
+      <p className="mt-2 text-[15px] leading-relaxed text-muted">{bio}</p>
     </header>
   );
 }

@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff8f0;
+  --foreground: #3b2c24;
+  --muted: #8a7266;
+  --bg-gradient: linear-gradient(165deg, #fffaf3 0%, #fdf0e4 45%, #fbdcc8 100%);
+  --glow-1: rgba(255, 196, 160, 0.55);
+  --glow-2: rgba(255, 232, 196, 0.7);
+  --card-bg: rgba(255, 255, 255, 0.42);
+  --card-bg-hover: rgba(255, 255, 255, 0.6);
+  --card-border: rgba(255, 255, 255, 0.75);
+  --card-shadow: 0 6px 24px -12px rgba(140, 82, 48, 0.35);
+  --card-shadow-hover: 0 10px 28px -12px rgba(140, 82, 48, 0.45);
+  --avatar-shadow: 0 14px 34px -12px rgba(140, 82, 48, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1c1613;
+    --foreground: #f5e9df;
+    --muted: #b8a294;
+    --bg-gradient: linear-gradient(165deg, #1c1613 0%, #261c17 50%, #33231b 100%);
+    --glow-1: rgba(214, 120, 72, 0.22);
+    --glow-2: rgba(240, 180, 120, 0.12);
+    --card-bg: rgba(255, 240, 228, 0.06);
+    --card-bg-hover: rgba(255, 240, 228, 0.1);
+    --card-border: rgba(255, 240, 228, 0.14);
+    --card-shadow: 0 6px 24px -12px rgba(0, 0, 0, 0.6);
+    --card-shadow-hover: 0 10px 28px -12px rgba(0, 0, 0, 0.7);
+    --avatar-shadow: 0 14px 34px -12px rgba(0, 0, 0, 0.7);
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: var(--font-geist-sans), "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-family: var(--font-sans);
+  word-break: keep-all;
 }

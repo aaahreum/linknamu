@@ -23,7 +23,7 @@ export default function LinkCard({ link }: { link: LinkItem }) {
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => recordClick(link.id)}
-      className="block w-full rounded-xl border-2 border-zinc-800 bg-white px-5 py-4 text-center font-medium transition hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 dark:border-zinc-300 dark:bg-zinc-900"
+      className="block w-full rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] px-6 py-4 text-center text-[15px] font-medium shadow-[var(--card-shadow)] backdrop-blur-md transition duration-300 ease-out hover:-translate-y-px hover:bg-[var(--card-bg-hover)] hover:shadow-[var(--card-shadow-hover)] active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground/40 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
     >
       {link.title}
     </a>
