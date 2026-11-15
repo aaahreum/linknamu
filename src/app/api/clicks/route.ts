@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import { profile } from "@/data/profile";
 import { getClicksCollection } from "@/lib/mongodb";
 
@@ -27,11 +28,13 @@ export async function POST(request: Request) {
 
 /** 링크별 클릭 수 조회 */
 export async function GET() {
+  // 빌드 시 미리 렌더링되지 않고 요청마다 최신 값을 읽도록
+  await connection();
   try {
     const clicks = await getClicksCollection();
-    const docs = await clicks.find().toArray();
+    const docs = await clicks.find({ _id: { $in: [...validIds] } }).toArray();
     const counts = Object.fromEntries(docs.map((d) => [d._id, d.count]));
-    return Response.json({ counts });
+    return Response.json({ counts }, { headers: { "Cache-Control": "no-store" } });
   } catch (err) {
     console.error("클릭 수 조회 실패", err);
     return Response.json({ error: "클릭 수 조회 실패" }, { status: 500 });
